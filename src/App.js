@@ -4,7 +4,7 @@ import { useState } from "react";
 import Chat from "./Chat";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io("http://localhost:3001");
 
 function App() {
   const [username, setUsername] = useState("");

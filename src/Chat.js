@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import { IoSend } from "react-icons/io5";
-import { v4 as uuidv4 } from "uuid";
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
@@ -35,7 +34,6 @@ function Chat({ socket, username, room }) {
     socket.on("receive_message", handleReceiveMessage);
   
     return () => {
-      // Limpiar el listener cuando el componente se desmonta
       socket.off("receive_message", handleReceiveMessage);
     };
   }, [socket, messageList]);
